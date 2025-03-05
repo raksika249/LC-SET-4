@@ -1,0 +1,38 @@
+class Solution(object):
+    def strWithout3a3b(self, a, b):
+        res=[]
+        f=0
+        if(a>b):
+            res+='a'
+            f=0
+            a-=1
+        elif(a<b):
+            res+='b'
+            f=1
+            b-=1
+        while(a!=0 and b!=0):
+            if(f==0):
+                res+='b'
+                b-=1
+                res+='a'
+                a-=1
+            else:
+                res+='a'
+                a-=1
+                res+='b'
+                b-=1
+        if(a==b):
+            res="".join(res)
+            return res
+        i=0
+        while(a!=0 or b!=0):
+            if(a!=0):
+                res.insert(i,'a')
+                a-=1
+            else:
+                res.insert(i,'b')
+                b-=1
+            i+=3
+        res="".join(res)
+        return res
+solution=Solution()
