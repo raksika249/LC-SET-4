@@ -1,0 +1,14 @@
+class Solution(object):
+    def pivotArray(self, nums, pivot):
+        larger=[]
+        smaller=[]
+        btw=[]
+        for i in nums:
+            if(i>pivot):
+                larger.append(i)
+            elif(i<pivot):
+                smaller.append(i)
+            else:
+               btw.append(i)
+        return smaller+btw+larger
+    
